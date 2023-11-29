@@ -9,4 +9,6 @@ import java.io.Serializable;
  * @since 29/11/2023
  */
 public class User implements Serializable {
+    private String email;
+    private String password;
 }
