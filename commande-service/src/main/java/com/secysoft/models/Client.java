@@ -1,19 +1,25 @@
 package com.secysoft.models;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
-@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
+@ToString
 @Table(name = "client")
 public class Client implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    Integer id;
-    @Column(name = "email", updatable = true,nullable = false)
-    String email;
-    @Column(name = "nom_client",updatable = true,nullable = false)
-    String nom_client;
-    //int userId;
+    @Column(name = "clientId",nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long  id;
+    @Column(name = "email",nullable = false)
+    private String email;
+    @Column(name = "nom_client",nullable = false)
+    private String nomClient;
+
 }

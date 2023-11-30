@@ -10,11 +10,12 @@ import java.io.Serializable;
 
 public class commande implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    Integer id;
-    @Column(name = "nom_commande", updatable = true,nullable = false)
-    String nom_commande;
-    @Column(name = "designation",updatable = true,nullable = false)
-    String designation;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "commandeId",nullable = false)
+    private Long id;
+    @Column(name = "nom_commande",nullable = false)
+    private String nomCommande;
+    @Column(name = "designation",nullable = false)
+    private String designation;
     // clientId
 }

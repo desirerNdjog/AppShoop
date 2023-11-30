@@ -1,26 +1,33 @@
 package com.secysoft.models;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.io.Serializable;
+import java.security.PrivateKey;
 
 
-@Data
+//@Data
+@Getter
+@Setter
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 @Entity
 @Table(name = "produit")
 public class Produit implements Serializable {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    Integer id;
-    @Column(name = "nom_produit", updatable = true,nullable = false)
-    String nom_produit;
-    @Column(name = "type",updatable = true,nullable = false)
-    String type;
-    @Column(nullable = false,updatable = true,name = "prix")
-    Integer prix;
-    @Column(nullable = false,updatable = true,name = "qteStoke")
-    Integer qteStoke;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "produitId",nullable = false)
+    private Long id;
+    @Column(name = "nom_produit",nullable = false)
+    private String nomProduit;
+    @Column(name = "type",nullable = false)
+    private String type;
+    @Column(nullable = false,name = "prix")
+    private Integer prix;
+    @Column(nullable = false,name = "qteStoke")
+    private Integer qteStoke;
 
 
 
