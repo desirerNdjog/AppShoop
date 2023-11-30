@@ -10,8 +10,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @since ${DATE}
  */
 @SpringBootApplication
-public class Commande {
+public class CommandeService {
     public static void main(String[] args) {
-        SpringApplication.run(Commande.class);
+        SpringApplication.run(CommandeService.class);
     }
 }
