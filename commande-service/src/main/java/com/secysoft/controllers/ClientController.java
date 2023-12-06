@@ -1,6 +1,4 @@
-package com.secysoft.controllers;
-
-
+/*package com.secysoft.controllers;
 import com.secysoft.models.Client;
 import com.secysoft.repositories.ClientRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,9 +11,11 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
+// @RestController: Indique que cette classe est un contrôleur Spring qui gère les requêtes HTTP.
 public class ClientController {
 
     @Autowired
+    // @Autowired: Utilisé pour l'injection de dépendances
     private ClientRepo clientRepo;
 
     @GetMapping("/getAllClient")
@@ -75,4 +75,47 @@ public class ClientController {
 
     }
 
+}**/
+
+package com.secysoft.controllers;
+
+import com.secysoft.models.Client;
+import com.secysoft.services.ClientService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/clients")
+public class ClientController {
+
+    @Autowired
+    private ClientService clientService;
+
+    @GetMapping("/getAllClient")
+    public List<Client> getAllClient() {
+        return clientService.getAllClient();
+    }
+
+    @GetMapping("/getClientById/{id}")
+    public Client getClientById(@PathVariable Long id) {
+        return clientService.getClientById(id);
+    }
+
+    @PostMapping("/addClient")
+    public Client addClient(@RequestBody Client client) {
+        return clientService.addClient(client);
+    }
+
+    @PutMapping("/updateClientById/{id}")
+    public Client updateClientById(@PathVariable Long id, @RequestBody Client updatedClient) {
+        return clientService.updateClientById(id, updatedClient);
+    }
+
+    @DeleteMapping("/deleteClientById/{id}")
+    public void deleteClientById(@PathVariable Long id) {
+        clientService.deleteClientById(id);
+    }
 }
+

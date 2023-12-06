@@ -1,8 +1,5 @@
 package com.secysoft.models;
 
- import jakarta.persistence.FetchType;
-import java.util.Set;
-
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -31,6 +28,5 @@ public class Commande implements Serializable {
     @JoinColumn(name = "client")
     private Client client;
 
-    //@OneToMany(mappedBy = "commande", fetch = FetchType.LAZY)
-   // private Set<Produit> produit;
+
 }

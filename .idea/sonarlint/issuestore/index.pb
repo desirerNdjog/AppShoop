@@ -23,3 +23,9 @@ x
 Hcommande-service/src/main/java/com/secysoft/repositories/ClientRepo.java,7\4\746d65188d6d0f9976c0a1426fa8d3a2a3379264
 }
 Mcommande-service/src/main/java/com/secysoft/controllers/ClientController.java,c\c\cc158d21805e11375525c85953cb198947f51042
+~
+Ncommande-service/src/main/java/com/secysoft/controllers/ProduitController.java,2\3\238a1f0f5b4d87361db89b4081ec9f0a0ecb83a0
+†
+Vcommande-service/src/main/java/com/secysoft/controllers/ProduitCommandeController.java,8\9\896bb2d6f9db87f63651e74f3d49281fcf95c68d
+
+Ocommande-service/src/main/java/com/secysoft/controllers/CommandeController.java,3\7\37f8e07661e3a42267516a0cb7287b2159ecf2c1

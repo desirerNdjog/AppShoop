@@ -21,7 +21,5 @@ public class Client implements Serializable {
     private String email;
     @Column(name = "nom_client",nullable = false)
     private String nomClient;
-    //@OneToMany(mappedBy = "client", fetch = FetchType.LAZY)
-    //private Collection<Commande> commande;
 
 }
