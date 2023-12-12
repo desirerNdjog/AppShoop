@@ -28,11 +28,13 @@ public class ProduitCommande implements Serializable {
     private Integer total;
 
     @ManyToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "produit")
+    @JoinColumn(name = "produit_id")
     private Produit produit;
 
     @ManyToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "commande")
+    @JoinColumn(name = "commande_id")
     private Commande commande;
+
+
 
 }

@@ -1,5 +1,4 @@
-package com.secysoft.controllers;
-
+/*package com.secysoft.controllers;
 
 import com.secysoft.models.Commande;
 import com.secysoft.repositories.CommandeRepo;
@@ -76,4 +75,52 @@ public class CommandeController {
 
 
     }
+}*/
+
+package com.secysoft.controllers;
+
+import com.secysoft.models.Commande;
+import com.secysoft.services.CommandeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+@RequestMapping("/commande")
+public class CommandeController {
+
+    @Autowired
+    private CommandeService commandeService;
+
+    @GetMapping("/getAllCommande")
+    public List<Commande> getAllCommande() {
+        return commandeService.getAllCommande();
+    }
+
+    @GetMapping("/getCommandeById/{id}")
+    public Commande getCommandeById(@PathVariable Long id) {
+        return commandeService.getCommandeById(id);
+    }
+
+    @PostMapping("/addCommande")
+    public Commande addCommande(@RequestBody Commande commande) {
+        return commandeService.addCommande(commande);
+    }
+
+    @PutMapping("/updateCommandeById/{id}")
+    public Commande updateCommandeById(@PathVariable Long id, @RequestBody Commande updatedCommande) {
+        return commandeService.updateCommandeById(id, updatedCommande);
+    }
+
+    @DeleteMapping("/deleteCommandeById/{id}")
+    public void deleteCommandeById(@PathVariable Long id) {
+        commandeService.deleteCommandeById(id);
+    }
+
+   /* @PostMapping("/createCommandeForClient/{clientId}")
+    public Commande createCommandeForClient(@PathVariable Long clientId, @RequestBody Commande commande) {
+        return commandeService.createCommandeForClient(clientId, commande);
+    }*/
 }
+

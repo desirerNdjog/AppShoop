@@ -16,7 +16,7 @@ public class Commande implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "commandeId",nullable = false)
-    private Long id;
+    private Long idCommande;
 
     @Column(name = "nom_commande",nullable = false)
     private String nomCommande;
@@ -25,7 +25,7 @@ public class Commande implements Serializable {
     private String designation;
 
     @ManyToOne(cascade = CascadeType.DETACH)
-    @JoinColumn(name = "client")
+    @JoinColumn(name = "idclient")
     private Client client;
 
 

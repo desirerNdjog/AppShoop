@@ -14,9 +14,9 @@ import java.io.Serializable;
 @Table(name = "client")
 public class Client implements Serializable {
     @Id
-    @Column(name = "clientId",nullable = false)
+    @Column(name = "idclient",nullable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long  id;
+    private Long  idclient;
     @Column(name = "email",nullable = false)
     private String email;
     @Column(name = "nom_client",nullable = false)
