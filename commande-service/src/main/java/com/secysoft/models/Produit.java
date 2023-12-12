@@ -1,7 +1,5 @@
 package com.secysoft.models;
-import java.util.Set;
 
-import com.secysoft.CommandeService;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -20,7 +18,7 @@ public class Produit implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "produitId",nullable = false)
-    private Long id;
+    private Long idPrduit;
 
     @Column(name = "nom_produit",nullable = false)
     private String nomProduit;
@@ -34,8 +32,7 @@ public class Produit implements Serializable {
     @Column(nullable = false,name = "qteStoke")
     private Integer qteStoke;
 
-   // @OneToMany(mappedBy = "produit", fetch = FetchType.LAZY)
-   // private Set<Commande> commande;
+
 
 
 
